@@ -23,7 +23,11 @@ const userSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     },
-    isVerified: {
+    isVerifiedEmail: {
+        type: Boolean,
+        default: false
+    },
+    isVerifiedPhone: {
         type: Boolean,
         default: false
     },
@@ -31,16 +35,28 @@ const userSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
-    resetPasswordToken: {
+    resetPasswordTokenEmail: {
         type: String
     },
-    resetPasswordExpiresAt: {
+    resetPasswordExpiresAtEmail: {
         type: Date
     },
-    verificationToken: {
+    resetPasswordTokenPhone: {
         type: String
     },
-    verificationTokenExpiresAt: {
+    resetPasswordExpiresAtPhone: {
+        type: Date
+    },
+    verificationTokenPhone: {
+        type: String
+    },
+    verificationTokenExpiresAtPhone: {
+        type: Date
+    },
+    verificationTokenEmail: {
+        type: String
+    },
+    verificationTokenExpiresAtEmail: {
         type: Date
     }
 }, { timestamps: true, minimize: true });
